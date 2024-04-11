@@ -29,7 +29,7 @@ app.use('/ProfilePage', (req, res) => {
   const preDefinedValues = loadPreDefinedValues();
   
   // Read the HTML file and serve it as response
-  fs.readFile('./Profile HTML.html', 'utf8', (err, data) => {
+  fs.readFile('Profile HTML.html', 'utf8', (err, data) => {
     if (err) {
       res.status(500).send('Internal Server Error');
       return;
@@ -54,7 +54,7 @@ app.use('/ProfilePage', (req, res) => {
 });
 
 // Route to handle profile update
-app.post('/updateProfile', (req, res) => {
+app.use('/updateProfile', (req, res) => {
   const { name, email, password, gender } = req.body;
 
   // Load pre-defined values
@@ -77,7 +77,7 @@ app.post('/updateProfile', (req, res) => {
 });
 
 // Route to handle shipment information update
-app.post('/updateShipmentInfo', (req, res) => {
+app.use('/updateShipmentInfo', (req, res) => {
   const { billingAddress, pincode, lastOrderShippedOn, redeemCard } = req.body;
 
   // Load pre-defined values
