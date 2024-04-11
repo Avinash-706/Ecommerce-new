@@ -24,12 +24,12 @@ app.get('/', (req, res) => {
 });
 
 // Route to serve the HTML form 
-app.get('./ProfilePage', (req, res) => {
+app.use('/ProfilePage', (req, res) => {
   // Load pre-defined values
   const preDefinedValues = loadPreDefinedValues();
   
   // Read the HTML file and serve it as response
-  fs.readFile('Profile HTML.html', 'utf8', (err, data) => {
+  fs.readFile('./Profile HTML.html', 'utf8', (err, data) => {
     if (err) {
       res.status(500).send('Internal Server Error');
       return;
