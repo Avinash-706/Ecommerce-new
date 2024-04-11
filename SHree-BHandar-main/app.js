@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 });
 
 // Route to serve the HTML form 
-app.use('/ProfilePage', (req, res) => {
+app.get('/ProfilePage', (req, res) => {
   // Load pre-defined values
   const preDefinedValues = loadPreDefinedValues();
   
@@ -54,7 +54,7 @@ app.use('/ProfilePage', (req, res) => {
 });
 
 // Route to handle profile update
-app.use('/updateProfile', (req, res) => {
+app.post('/updateProfile', (req, res) => {
   const { name, email, password, gender } = req.body;
 
   // Load pre-defined values
@@ -77,7 +77,7 @@ app.use('/updateProfile', (req, res) => {
 });
 
 // Route to handle shipment information update
-app.use('/updateShipmentInfo', (req, res) => {
+app.post('/updateShipmentInfo', (req, res) => {
   const { billingAddress, pincode, lastOrderShippedOn, redeemCard } = req.body;
 
   // Load pre-defined values
