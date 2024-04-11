@@ -6,8 +6,8 @@ const app = express();
 const port = process.env.PORT || 3000; // Use the dynamic port assigned by Heroku or default to 3000
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/images', express.static('images'));
-app.use(express.static('/SHree-BHandar-main'));
+// app.use('/images', express.static('images'));
+app.use(express.static('SHree-BHandar-main'));
 
 // Function to load pre-defined values from JSON file
 function loadPreDefinedValues() {
