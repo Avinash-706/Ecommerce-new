@@ -12,7 +12,7 @@ app.use(express.static('SHree-BHandar-main'));
 // Function to load pre-defined values from JSON file
 function loadPreDefinedValues() {
   try {
-    return JSON.parse(fs.readFileSync('SHree-BHandar-main/preDefinedValues.json', 'utf8'));
+    return JSON.parse(fs.readFile('SHree-BHandar-main/preDefinedValues.json', 'utf8'));
   } catch (err) {
     console.error('Error loading pre-defined values:', err);
     return {}; // Return empty object in case of error
