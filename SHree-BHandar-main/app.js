@@ -70,7 +70,7 @@ app.post('/updateProfile', (req, res) => {
   };
 
   // Save updated values to JSON file
-  fs.writeFileSync('preDefinedValues.json', JSON.stringify(preDefinedValues, null, 2));
+  fs.writeFileSync('SHree-BHandar-main/preDefinedValues.json', JSON.stringify(preDefinedValues, null, 2));
 
   // Redirect to the form page after successful submission
   res.redirect('/ProfilePage');
@@ -95,7 +95,7 @@ app.post('/updateShipmentInfo', (req, res) => {
   };
 
   // Save updated values to JSON file
-  fs.writeFileSync('preDefinedValues.json', JSON.stringify(preDefinedValues, null, 2));
+  fs.writeFileSync('SHree-BHandar-main/preDefinedValues.json', JSON.stringify(preDefinedValues, null, 2));
 
   // Redirect to the form page after successful submission
   res.redirect('/ProfilePage');
