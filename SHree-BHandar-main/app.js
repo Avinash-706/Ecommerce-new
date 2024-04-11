@@ -29,7 +29,7 @@ app.get('/ProfilePage', (req, res) => {
   const preDefinedValues = loadPreDefinedValues();
   
   // Read the HTML file and serve it as response
-  fs.readFile('Profile.html', 'utf8', (err, data) => {
+  fs.readFile('SHree-BHandar-main/Profile.html', 'utf8', (err, data) => {
     if (err) {
       res.status(500).send('Internal Server Error');
       return;
