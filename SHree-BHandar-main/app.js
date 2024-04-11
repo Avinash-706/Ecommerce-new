@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 });
 
 // Route to serve the HTML form 
-app.get('/ProfilePage', (req, res) => {
+app.get('./ProfilePage', (req, res) => {
   // Load pre-defined values
   const preDefinedValues = loadPreDefinedValues();
   
