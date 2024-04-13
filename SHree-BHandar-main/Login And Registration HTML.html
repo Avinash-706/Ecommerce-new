@@ -38,7 +38,7 @@
 
                     <div class="head">
                         <nav class="navigation">
-                            <a href="Home Page HTML.html" class="logo" style="text-decoration: none;">
+                            <a href="index.html" class="logo" style="text-decoration: none;">
 
                                 <span style="color: #40aa54;">SHree</span>BHandar
 
@@ -81,11 +81,11 @@
 
                     </div>
 
-                    <form action="">
+                    <form action="/signin" method="POST">
 
-                        <input type="text" placeholder="EMAIL" required>
+                        <input type="text" placeholder="EMAIL" name="email" required>
 
-                        <input type="password" placeholder="PASSWORD" required>
+                        <input type="password" placeholder="PASSWORD" name="password" required>
 
                         <button id="b">
 
@@ -97,18 +97,23 @@
 
                         </button>
 
-                        <button type="submit" class='sign_in_btn'>
+                        <button type="submit" class='sign_in_btn' onclick="openPopup()">
 
-                            <a href='Home Page HTML.html'>
+                            <!-- <a href='index.html.html'> -->
 
-                                <b>SIGN IN</b>
+                            <b>SIGN IN</b>
 
-                            </a>
+                            <!-- </a> -->
 
                         </button>
 
                     </form>
 
+                </div>
+
+                <div id="popup" class="popup">
+                    <span class="close-popup" onclick="closePopup()">&times;</span>
+                    <p>Invalid email or password!</p>
                 </div>
 
             </div>
@@ -149,7 +154,7 @@
 
                     <h1>
                         <nav class="navigation">
-                            <a href="Home Page HTML.html" class="logo">
+                            <a href="index.html" class="logo">
 
                                 <span>SHree</span>BHandar
 
@@ -218,29 +223,18 @@
 
                     </div>
 
-                    <form action="">
+                    <form action="/signup" method="POST">
 
-                        <input type="text" placeholder="NAME" required>
-
-                        <br>
-
-                        <input type="text" placeholder="EMAIL" required>
-
-                        <br>
-
-                        <input type="password" placeholder="PASSWORD" required>
-
-                        <br>
-
-                        <input type="text" placeholder="PHONE NO. (optional)">
-
-                        <br>
+                        <input type="text" placeholder="NAME" name="name" required><br>
+                        <input type="email" placeholder="EMAIL" name="email" required><br>
+                        <input type="password" placeholder="PASSWORD" name="password" required><br>
+                        <input type="text" placeholder="PHONE NO. (optional)" name="phone"><br>
 
                         <button type="submit" style="cursor: pointer;" class='sign_up_btn'>
 
-                            <a href='Home Page HTML.html' style="color: white; text-decoration: none; ">
+                            <a href='index.html' style="color: white; text-decoration: none; ">
 
-                               <b>SIGN UP </b>
+                                <b>SIGN UP </b>
 
                             </a>
 
