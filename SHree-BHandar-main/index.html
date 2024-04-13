@@ -126,7 +126,7 @@
 
                 <li>
 
-                    <a href="Login And Registration HTML.html">
+                    <a href="login-registration">
 
                         Sign&nbsp;up
 
@@ -136,7 +136,7 @@
 
                 <li>
 
-                    <a href="Login And Registration HTML.html">
+                    <a href="login-registration">
 
                         Login
 
@@ -192,8 +192,27 @@
             </div>
 
         </nav>
-
         <!--nav-end--------------------->
+
+        <!-- login-name -->
+        <p class="login-name"></p>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const username = getCookie('username');
+                if (username) {
+                    document.querySelector('.login-name').innerHTML = `<span>Welcome, </span><span>${username}</span>`;
+                }
+            });
+
+            // Function to get the value of a cookie
+            function getCookie(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            }
+        </script>
+
         <!--==Search-banner=======================================-->
         <section id="search-banner">
 
@@ -285,52 +304,7 @@
 
         </div>
 
-        <!-- <script src='Best Deals JS.js'></script> -->
-        <script>
-            let i = 0;
-
-            let j = 4;
-
-            const dots = document.querySelectorAll(".dot-container button");
-            const images = document.querySelectorAll(".image-container img");
-
-            function next() {
-
-                document.getElementById("content" + (i + 1)).
-                    classList.remove("active");
-                i = (j + i + 1) % j;
-                document.getElementById("content" + (i + 1)).
-                    classList.add("active");
-                indicator(i + 1);
-            }
-
-            function prev() {
-
-                document.getElementById("content" + (i + 1)).
-                    classList.remove("active");
-                i = (j + i - 1) % j;
-                document.getElementById("content" + (i + 1)).
-                    classList.add("active");
-                indicator(i + 1);
-            }
-
-            function indicator(num) {
-                dots.forEach(function (dot) {
-                    dot.style.backgroundColor = 'transparent';
-                });
-                document.querySelector(".dot-container button:nth-child(" + num + ")").style.backgroundColor = "#58e078"
-            }
-
-            function dot(index) {
-                images.forEach(function (image) {
-                    image.classList.remove("active");
-                });
-                document.getElementById('content' + index).
-                    classList.add("active");
-                i = index - 1;
-                indicator(index);
-            }
-        </script>
+        <script src='Best Deals JS.js'></script>
 
         <h2 class='sale-heading'>
 
@@ -793,58 +767,7 @@
                 </div>
             </div>
         </footer>
-        <script>
-
-            const daysEl = document.getElementById("days");
-            const hoursEl = document.getElementById("hours");
-            const minsEl = document.getElementById("mins");
-            const secondsEl = document.getElementById("seconds");
-
-            const newYears = "10 April 2024";
-
-            function countdown() {
-                const newYearsDate = new Date(newYears);
-                const currentDate = new Date();
-
-                const totalSeconds = (newYearsDate - currentDate) / 1000;
-
-                const days = Math.floor(totalSeconds / 3600 / 24);
-                const hours = Math.floor(totalSeconds / 3600) % 24;
-                const mins = Math.floor(totalSeconds / 60) % 60;
-                const seconds = Math.floor(totalSeconds) % 60;
-
-                daysEl.innerHTML = days;
-                hoursEl.innerHTML = formatTime(hours);
-                minsEl.innerHTML = formatTime(mins);
-                secondsEl.innerHTML = formatTime(seconds);
-            }
-
-            function formatTime(time) {
-                return time < 10 ? `0${time}` : time;
-            }
-            // initial call
-            countdown();
-            setInterval(countdown, 1000);
-
-            // Animate on Scroll
-            function reveal() {
-                var reveals = document.querySelectorAll(".category-container, .product-container, .client-box, .logo-container, .app-img, .download-app-text");
-
-                for (var i = 0; i < reveals.length; i++) {
-                    var windowHeight = window.innerHeight;
-                    var elementTop = reveals[i].getBoundingClientRect().top;
-                    var elementVisible = 150;
-
-                    if (elementTop < windowHeight - elementVisible) {
-                        reveals[i].classList.add("active");
-                    } else {
-                        reveals[i].classList.remove("active");
-                    }
-                }
-            }
-            window.addEventListener("scroll", reveal);
-
-        </script>
+        <script src="Home Page JS.js"></script>
 
     </body>
 
