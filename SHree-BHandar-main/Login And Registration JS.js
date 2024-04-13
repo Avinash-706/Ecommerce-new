@@ -33,3 +33,18 @@ s.onclick = function ()
     a.classList.remove("hide");
     a.classList.add("show");
 }
+
+//ERROR
+function openPopup() {
+    var popup = document.getElementById("popup");
+    popup.style.display = "block";
+    document.getElementById("popup").style.left = "0px";
+
+}
+
+function closePopup() {
+    var popup = document.getElementById("popup");
+    popup.style.display = "none";
+    document.getElementById("popup").style.left = "-300px";
+
+}
