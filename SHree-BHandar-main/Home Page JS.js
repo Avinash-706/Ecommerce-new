@@ -3,7 +3,7 @@ const hoursEl = document.getElementById("hours");
 const minsEl = document.getElementById("mins");
 const secondsEl = document.getElementById("seconds");
 
-const newYears = "10 April 2024";
+const newYears = "23 April 2024";
 
 function countdown() {
     const newYearsDate = new Date(newYears);
@@ -49,3 +49,26 @@ function reveal() {
   }
   
   window.addEventListener("scroll", reveal);
+
+
+
+  document.querySelectorAll('.cart-btn').forEach(btn => {
+      btn.addEventListener('click', function (event) {
+          event.preventDefault(); // Prevent the default action of the link
+          let productBox = this.parentElement;
+          let productName = productBox.querySelector('strong').innerText;
+          let productImage = productBox.querySelector('img').getAttribute('src');
+          let productQuantity = productBox.querySelector('.quantity').innerText;
+          let productPrice = productBox.querySelector('.price').innerText;
+
+          // Encode product details to be passed as URL parameters
+          let params = new URLSearchParams();
+          params.append('name', productName);
+          params.append('image', productImage);
+          params.append('quantity', productQuantity);
+          params.append('price', productPrice);
+
+          // Redirect to shopping cart page with product details
+          window.location.href = 'Shopping Cart HTML.html?' + params.toString();
+      });
+  });
