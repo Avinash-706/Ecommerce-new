@@ -42,7 +42,7 @@ To run the project locally, clone this repository and run the following commands
 ```bash
 npm install
 npm start
-
+```
 The app will start on http://localhost:4000 by default.
 
 ## 📄 License
